@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Prime Moment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="setup-screen" class="screen active">
+        <div class="glass-panel setup-panel">
+            <h1>The Prime Moment</h1>
+            <p>Enter the names of the 6 showroom staff playing the game.</p>
+            <div class="setup-form">
+                <div class="input-group"><label>Gold Counter</label><input type="text" id="name-Gold" placeholder="Name..."></div>
+                <div class="input-group"><label>Diamond Counter</label><input type="text" id="name-Diamond" placeholder="Name..."></div>
+                <div class="input-group"><label>Precious Stones Counter</label><input type="text" id="name-Precious Stones" placeholder="Name..."></div>
+                <div class="input-group"><label>Silver Counter</label><input type="text" id="name-Silver" placeholder="Name..."></div>
+                <div class="input-group"><label>Platinum Counter</label><input type="text" id="name-Platinum" placeholder="Name..."></div>
+                <div class="input-group"><label>Polki Counter</label><input type="text" id="name-Polki" placeholder="Name..."></div>
+            </div>
+            <button id="start-game-btn" class="gold-btn">Start Game</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div class="dashboard">
+            <!-- Left: Board -->
+            <div class="panel board-panel">
+                <h2>Showroom Floor</h2>
+                <div id="board-grid" class="board-grid">
+                    <!-- Stops populated by JS -->
+                </div>
+            </div>
+
+            <!-- Center: Action -->
+            <div class="panel action-panel">
+                <div class="round-header">
+                    <h2 id="round-indicator">Round 1 / 10</h2>
+                    <div id="roller-info">Waiting to roll...</div>
+                </div>
+                
+                <div class="action-controls" id="action-controls">
+                    <div id="dice-container" class="dice-container">
+                        <div id="dice" class="dice">1</div>
+                        <button id="roll-btn" class="gold-btn">Roll Dice</button>
+                    </div>
+                </div>
+
+                <div id="customer-card" class="customer-card hidden">
+                    <h3 id="cc-who">Premium Bridal Family</h3>
+                    <p class="cc-mood" id="cc-mood">Wants only best</p>
+                    <div class="cc-details">
+                        <div><strong>Counters:</strong> <span id="cc-counters">Gold, Diamond</span></div>
+                        <div><strong>Lead:</strong> <span id="cc-lead">Gold</span></div>
+                        <div><strong>Total COS:</strong> <span id="cc-cos">150</span></div>
+                    </div>
+                    <div class="cc-hidden" id="cc-chance">Hidden Chance: ...</div>
+                </div>
+
+                <div id="timer-section" class="timer-section hidden">
+                    <div id="timer" class="timer">05:00</div>
+                    <button id="start-timer-btn" class="silver-btn">Start Timer</button>
+                </div>
+
+                <div id="negotiation-section" class="negotiation-section hidden">
+                    <h3>Final Agreement</h3>
+                    <div id="nego-inputs" class="nego-inputs">
+                        <!-- Inputs for COS populated by JS -->
+                    </div>
+                    <div class="nego-actions">
+                        <button id="agree-btn" class="gold-btn">Deal Closed</button>
+                        <button id="walkout-btn" class="red-btn">Customer Walkout</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Stats -->
+            <div class="panel stats-panel">
+                <h2>Scoreboard</h2>
+                <div class="meter-container">
+                    <span>Customer Satisfaction</span>
+                    <div class="meter-bar">
+                        <div id="meter-fill" class="meter-fill" style="width: 50%;"></div>
+                    </div>
+                    <div id="meter-text" class="meter-text">50 / 100 - Good</div>
+                </div>
+
+                <div class="leaderboard">
+                    <table id="score-table">
+                        <thead>
+                            <tr>
+                                <th>Counter</th>
+                                <th>Player</th>
+                                <th>COS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Cards info -->
+                <div class="cards-panel">
+                    <h3>Host Card Manager</h3>
+                    <button id="generate-cards-btn" class="silver-btn small-btn">Generate & View Cards (Host)</button>
+                    <div id="host-cards-display" class="hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadu Puli Attam - Goats and Tigers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Aadu Puli Attam</h1>
+            <div class="status-bar">
+                <div class="turn-indicator tiger" id="turnIndicator">Tiger's Turn</div>
+                <div class="stats">
+                    <span id="goatsPlacedCounter">Goats Placed: 0/15</span>
+                    <span id="goatsCapturedCounter">Captured: 0/5</span>
+                </div>
+            </div>
+            <p id="instructionText" class="instruction">Tiger begins. Move a Tiger.</p>
+        </header>
+
+        <main>
+            <div class="board-wrapper">
+                <canvas id="gameCanvas" width="600" height="700"></canvas>
+            </div>
+            
+            <div class="controls">
+                <button id="restartBtn" class="btn">Restart Game</button>
+            </div>
+        </main>
+
+        <div id="gameOverModal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="winnerTitle">Game Over</h2>
+                <p id="winnerMessage">Tigers Win!</p>
+                <button id="modalRestartBtn" class="btn primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
